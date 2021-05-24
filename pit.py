@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 import subprocess
 
@@ -11,7 +12,6 @@ def create_list_of_arguments(arg_list, args):
 
 
 if __name__ == "__main__":
-    sys.argv.append("status")
     arg_list = []
     create_list_of_arguments(arg_list, sys.argv)
-    call_git_with_arguments(sys.argv)
+    call_git_with_arguments(arg_list)
