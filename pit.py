@@ -3,7 +3,10 @@ import sys
 import subprocess
 
 def call_git_with_arguments(args):
-    subprocess.run(args)
+    succesfull = subprocess.run(args).returncode
+    if succesfull != 0:
+        sys.stdout.write("Git not Installed.")
+        exit()
 
 def create_list_of_arguments(arg_list, args):
     arg_list.append("git")
